@@ -8,9 +8,9 @@ bot = telebot.TeleBot(TOKEN)
 # команды бота
 @bot.message_handler(commands=['start', 'help'])
 def help(message: telebot.types.Message):
-    text = f'Формат ввода: /price <имя валюты (Bitcoin/Ethereum/Solana)> \
-<имя валюты в которую хотите перевести (USD/EUR/RUB)> \
-<количество перводимой валюты (1/5/10)>\n \
+    text = f'Формат ввода: /price <имя валюты> \
+<имя валюты в которую хотите перевести> \
+<количество перводимой валюты>\n Пример: /price bitcoin евро 10\
 Для получения списка доступных валют, введите: /values'
     bot.reply_to(message, text)
 
